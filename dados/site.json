@@ -1,0 +1,780 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-19T04:48:48.004Z",
+  "content": {
+    "brand": {
+      "name": "GR Visual Comunicações",
+      "slogan": "Sua ideia, nossa criação",
+      "logoUrl": "imagens/marca/gr-mark.png"
+    },
+    "contact": {
+      "whatsapp": "5527988435960",
+      "whatsappDisplay": "(27) 98843-5960",
+      "email": "grvisualcomunicacoes@gmail.com",
+      "region": "Grande Vitória – ES",
+      "instagram": "https://www.instagram.com/grvisualcomunicacoes",
+      "facebook": "",
+      "tiktok": ""
+    },
+    "seo": {
+      "title": "GR Visual Comunicações — Sua ideia, nossa criação",
+      "description": "Gestão de redes sociais, tráfego pago, identidade visual, artes e materiais impressos para pequenos negócios da Grande Vitória – ES. Monte seu pedido e fale pelo WhatsApp."
+    },
+    "hero": {
+      "kicker": "Comunicação visual e marketing digital",
+      "title": "Sua ideia, nossa criação",
+      "subtitle": "Redes sociais, tráfego pago, identidade visual e materiais impressos para o seu negócio ser visto — e lembrado."
+    },
+    "banner": {
+      "active": false,
+      "text": "",
+      "link": ""
+    },
+    "about": {
+      "title": "Sobre a GR Visual",
+      "paragraphs": [
+        "A GR Visual Comunicações cria a comunicação de pequenos negócios e profissionais autônomos da Grande Vitória: identidade visual, artes para redes sociais, gestão de perfis, materiais digitais e impressos, cardápios, tabelas de preços, banners e tráfego pago.",
+        "O trabalho vai além de criar artes: organizamos a apresentação da sua marca para que o seu perfil funcione como vitrine e como canal de contato com novos clientes."
+      ]
+    },
+    "differentials": [
+      {
+        "title": "Do digital ao impresso",
+        "text": "Redes sociais, cardápios, flyers, banners e identidade visual em um só lugar."
+      },
+      {
+        "title": "Pacotes para pequenos negócios",
+        "text": "Opções pensadas para quem está começando ou quer crescer no digital."
+      },
+      {
+        "title": "Atendimento direto",
+        "text": "Você fala com quem cria, pelo WhatsApp, do pedido à entrega."
+      },
+      {
+        "title": "Produção no seu negócio",
+        "text": "Podemos ir até você para produzir conteúdo; o deslocamento é combinado à parte."
+      }
+    ],
+    "howItWorks": [
+      {
+        "title": "Escolha",
+        "text": "Navegue pelos pacotes e adicione ao carrinho o que faz sentido para o seu negócio — ou peça um orçamento personalizado."
+      },
+      {
+        "title": "Envie o pedido",
+        "text": "Preencha seus dados e envie pelo WhatsApp ou por e-mail. Nenhum pagamento é feito pelo site."
+      },
+      {
+        "title": "Confirmação",
+        "text": "Conferimos escopo, prazo e condições com você e enviamos a confirmação do orçamento."
+      },
+      {
+        "title": "Criação",
+        "text": "Com tudo aprovado, começamos a produção e acompanhamos as entregas com você."
+      }
+    ],
+    "notices": [
+      "O envio do pedido não garante disponibilidade imediata.",
+      "Os serviços dependem da confirmação de escopo, prazo e condições.",
+      "A verba de anúncios (tráfego pago) é cobrada separadamente, direto pela plataforma.",
+      "Serviços personalizados podem exigir orçamento individual."
+    ],
+    "testimonials": [],
+    "privacy": [
+      "Esta política explica como a GR Visual Comunicações trata os dados enviados pelo site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).",
+      "Dados coletados: nome, nome da empresa (opcional), WhatsApp, e-mail (opcional), cidade, serviços de interesse, objetivo e observações sobre o projeto. Não solicitamos CPF nem documentos pessoais.",
+      "Finalidade: usamos esses dados somente para responder à sua solicitação, preparar o orçamento e conduzir a contratação, quando houver.",
+      "Compartilhamento: os dados não são vendidos nem cedidos a terceiros. Ao enviar o pedido, eles seguem pelo WhatsApp ou por e-mail (serviço FormSubmit) diretamente para a GR Visual. O site não guarda seus dados em banco de dados.",
+      "Guarda: mantemos os dados pelo tempo necessário para o atendimento e para obrigações legais. Você pode pedir a exclusão a qualquer momento.",
+      "Seus direitos: você pode solicitar acesso, correção ou exclusão dos seus dados pelo WhatsApp ou e-mail informados neste site.",
+      "O carrinho do site fica salvo apenas no seu próprio navegador, para que você não perca os itens escolhidos enquanto navega."
+    ]
+  },
+  "packages": [
+    {
+      "price": 67,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [],
+      "excludes": [],
+      "duration": "20 dias",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": true,
+      "sort_order": 1,
+      "notes": "",
+      "slug": "venda-rapida",
+      "name": "Venda Rápida",
+      "category": "divulgacao",
+      "id": "venda-rapida"
+    },
+    {
+      "price": 140,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "2 publicações",
+        "3 stories",
+        "Divulgação em grupos de WhatsApp",
+        "Estratégia básica",
+        "Ajustes de identidade",
+        "Tabela de preços ou delivery"
+      ],
+      "excludes": [],
+      "duration": "30 dias",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": true,
+      "sort_order": 2,
+      "notes": "",
+      "slug": "mini",
+      "name": "Mini",
+      "category": "redes-sociais",
+      "id": "mini"
+    },
+    {
+      "price": 380,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": true,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": true,
+      "sort_order": 3,
+      "notes": "",
+      "slug": "social-trafego",
+      "name": "Social + Tráfego",
+      "category": "trafego-pago",
+      "id": "social-trafego"
+    },
+    {
+      "price": 250,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [],
+      "excludes": [
+        "Verba de anúncios (paga à parte, direto na plataforma)"
+      ],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": true,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": false,
+      "sort_order": 4,
+      "notes": "",
+      "slug": "gestao-trafego-pago",
+      "name": "Gestão de tráfego pago",
+      "category": "trafego-pago",
+      "id": "gestao-trafego-pago"
+    },
+    {
+      "price": 500,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "Google Meu Negócio"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": true,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": true,
+      "sort_order": 5,
+      "notes": "",
+      "slug": "digital-trafego",
+      "name": "Digital + Tráfego",
+      "category": "trafego-pago",
+      "id": "digital-trafego"
+    },
+    {
+      "price": 80,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": true,
+      "max_quantity": 10,
+      "description": "",
+      "includes": [],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": false,
+      "sort_order": 6,
+      "notes": "",
+      "slug": "conteudo-adicional",
+      "name": "Produção de conteúdo adicional",
+      "category": "conteudo",
+      "id": "conteudo-adicional"
+    },
+    {
+      "price": 200,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": false,
+      "sort_order": 7,
+      "notes": "",
+      "slug": "lancamento-de-marca",
+      "name": "Lançamento de Marca",
+      "category": "identidade-visual",
+      "id": "lancamento-de-marca"
+    },
+    {
+      "price": 170,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "Para lanchonetes e restaurantes: divulgação em grupos, cardápio, promoções, destaques e cartão ou panfleto digital.",
+      "includes": [
+        "Cardápio digital + versão para imprimir",
+        "4 artes de promoção ou combos",
+        "Capa + 3 destaques para o Instagram",
+        "Cartão digital com link do WhatsApp",
+        "Panfleto digital",
+        "Divulgação em grupos de WhatsApp durante 15 dias"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": true,
+      "featured": false,
+      "sort_order": 8,
+      "notes": "",
+      "slug": "sabor-completo",
+      "name": "Sabor Completo",
+      "category": "divulgacao",
+      "id": "sabor-completo"
+    },
+    {
+      "price": 30,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "2 posts",
+        "2 divulgações no WhatsApp",
+        "1 arte",
+        "1 story"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 20,
+      "notes": "",
+      "slug": "visibilidade",
+      "name": "Visibilidade",
+      "category": "redes-sociais",
+      "id": "visibilidade"
+    },
+    {
+      "price": 50,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "3 posts",
+        "4 divulgações no WhatsApp",
+        "2 divulgações no Facebook",
+        "2 artes",
+        "2 stories"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 21,
+      "notes": "",
+      "slug": "start",
+      "name": "Start",
+      "category": "redes-sociais",
+      "id": "start"
+    },
+    {
+      "price": 120,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "4 posts",
+        "4 stories",
+        "Artes",
+        "Textos",
+        "Divulgação",
+        "Organização mensal"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 22,
+      "notes": "",
+      "slug": "presenca-digital",
+      "name": "Presença Digital",
+      "category": "redes-sociais",
+      "id": "presenca-digital"
+    },
+    {
+      "price": 180,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "Publicações semanais",
+        "Stories",
+        "Artes promocionais",
+        "Divulgação em grupos",
+        "Cartão e flyer digital"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 23,
+      "notes": "",
+      "slug": "presenca",
+      "name": "Presença",
+      "category": "redes-sociais",
+      "id": "presenca"
+    },
+    {
+      "price": 397,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "8 posts",
+        "8 stories",
+        "Legendas",
+        "Calendário",
+        "Destaques",
+        "Análise básica"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 24,
+      "notes": "",
+      "slug": "campanha-essencial",
+      "name": "Campanha Essencial",
+      "category": "redes-sociais",
+      "id": "campanha-essencial"
+    },
+    {
+      "price": 897,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "5 artes",
+        "5 stories",
+        "500 flyers",
+        "Wind banner 2 m"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 25,
+      "notes": "",
+      "slug": "campanha-inicial",
+      "name": "Campanha Inicial",
+      "category": "impressos",
+      "id": "campanha-inicial"
+    },
+    {
+      "price": 1790,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "1.000 flyers A5",
+        "500 adesivos",
+        "5 promotores"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 26,
+      "notes": "",
+      "slug": "campanha-bairro",
+      "name": "Campanha Bairro",
+      "category": "impressos",
+      "id": "campanha-bairro"
+    },
+    {
+      "price": 2990,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [
+        "10.000 flyers A5",
+        "500 adesivos",
+        "Banner gota 2 m",
+        "5 promotores",
+        "Acompanhamento da equipe"
+      ],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 27,
+      "notes": "",
+      "slug": "campanha-completa",
+      "name": "Campanha Completa",
+      "category": "impressos",
+      "id": "campanha-completa"
+    },
+    {
+      "price": 349.5,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "",
+      "includes": [],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "Prazo de cerca de 10 dias",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 28,
+      "notes": "R$ 299,50 cada na compra de 2. Entrada de 50%. Criação da arte à parte: R$ 40.",
+      "slug": "wind-banner",
+      "name": "Wind Banner 2,70 × 0,70 m",
+      "category": "impressos",
+      "id": "wind-banner"
+    },
+    {
+      "price": 80,
+      "promo_price": null,
+      "pricing_mode": "fixo",
+      "allow_quantity": false,
+      "max_quantity": 1,
+      "description": "Divulgação em grupos de WhatsApp, Facebook e regionais.",
+      "includes": [],
+      "excludes": [],
+      "duration": "",
+      "deliverables": "",
+      "needs_ad_budget": false,
+      "start_estimate": "",
+      "image_url": "",
+      "active": false,
+      "featured": false,
+      "sort_order": 29,
+      "notes": "Preço \"a partir de\".",
+      "slug": "divulgacao-de-vagas",
+      "name": "Divulgação de vagas",
+      "category": "divulgacao",
+      "id": "divulgacao-de-vagas"
+    }
+  ],
+  "portfolio": [
+    {
+      "slug": "fatima-confeitaria-case",
+      "title": "Case de resultados — Fátima Confeitaria",
+      "client_name": "Fátima Confeitaria",
+      "category": "Cases",
+      "description": "Modernização da identidade visual (mantendo a orquídea e o lilás da marca), organização do perfil, bio estratégica, destaques e estratégia de conteúdo para aproximar a confeitaria do público.",
+      "highlights": [
+        "Visualizações: 4.123 → 11.973 (+190,4%)",
+        "Alcance: 350 → 2.381 contas (+580,3%)",
+        "Interações: 53 → 286 (+439,6%)",
+        "Novos seguidores: 8 → 45",
+        "Visualizações nos stories: 3.600 → 7.900 (+119,4%)",
+        "Comparativo de métricas do Instagram, junho → julho"
+      ],
+      "services": [
+        "Identidade visual",
+        "Organização de perfil",
+        "Estratégia de conteúdo",
+        "Social media"
+      ],
+      "images": [
+        "imagens/portfolio/fatima-capa.webp",
+        "imagens/portfolio/fatima-ponto-partida.webp",
+        "imagens/portfolio/fatima-identidade.webp",
+        "imagens/portfolio/fatima-perfil.webp",
+        "imagens/portfolio/fatima-conteudo.webp",
+        "imagens/portfolio/fatima-resultados.webp",
+        "imagens/portfolio/fatima-numeros.webp"
+      ],
+      "published": true,
+      "sort_order": 1,
+      "id": "fatima-confeitaria-case"
+    },
+    {
+      "slug": "cris-organiza-perfil",
+      "title": "Organização de perfil — Cris Organiza",
+      "client_name": "Cris Organiza",
+      "category": "Social media",
+      "description": "Transformação do perfil de uma personal organizer: bio com informações claras, destaques personalizados e padronizados e feed com identidade visual coesa.",
+      "highlights": [
+        "Organização da bio",
+        "Destaques personalizados e padronizados",
+        "Feed estratégico com identidade visual",
+        "Conteúdo alinhado com o público e o serviço"
+      ],
+      "services": [
+        "Social media",
+        "Organização de perfil"
+      ],
+      "images": [
+        "imagens/portfolio/cris-antes-depois.webp",
+        "imagens/portfolio/cris-transformacao.webp"
+      ],
+      "published": true,
+      "sort_order": 2,
+      "id": "cris-organiza-perfil"
+    },
+    {
+      "slug": "legaab-colecao-lumina",
+      "title": "Campanha Coleção Lumina — Legaab Modas",
+      "client_name": "Legaab Modas",
+      "category": "Campanhas para redes sociais",
+      "description": "Sequência de artes para a campanha da Coleção Lumina: apresentação da coleção, looks, oferta para quem viesse pelo anúncio e informações da loja.",
+      "highlights": [],
+      "services": [
+        "Campanha",
+        "Artes para redes sociais e anúncios"
+      ],
+      "images": [
+        "imagens/portfolio/legaab-lumina.webp"
+      ],
+      "published": true,
+      "sort_order": 3,
+      "id": "legaab-colecao-lumina"
+    },
+    {
+      "slug": "acaraje-do-iran",
+      "title": "Cardápio e materiais — Acarajé do Iran",
+      "client_name": "Acarajé do Iran",
+      "category": "Cardápios e impressos",
+      "description": "Cardápio com itens e preços, arte vertical com chamada para pedidos no iFood e simulação de aplicação da marca em wind banner e display de mesa.",
+      "highlights": [],
+      "services": [
+        "Cardápio",
+        "Arte para stories",
+        "Wind banner",
+        "Display de mesa"
+      ],
+      "images": [
+        "imagens/portfolio/acaraje-cardapio.webp",
+        "imagens/portfolio/acaraje-banner.webp",
+        "imagens/portfolio/acaraje-mockup.webp"
+      ],
+      "published": true,
+      "sort_order": 4,
+      "id": "acaraje-do-iran"
+    },
+    {
+      "slug": "miamore-bolsas-maternidade",
+      "title": "Artes de produto — Miamore Bolsas Maternidade",
+      "client_name": "Miamore Bolsas Maternidade",
+      "category": "Artes para redes sociais",
+      "description": "Artes que valorizam os detalhes das bolsas: estampa, laços, acabamento e alça, com a identidade delicada da marca.",
+      "highlights": [],
+      "services": [
+        "Artes para redes sociais"
+      ],
+      "images": [
+        "imagens/portfolio/miamore-detalhes.webp",
+        "imagens/portfolio/miamore-kit.webp"
+      ],
+      "published": true,
+      "sort_order": 5,
+      "id": "miamore-bolsas-maternidade"
+    },
+    {
+      "slug": "teotelas",
+      "title": "Logotipo e flyer — Teotelas",
+      "client_name": "Teotelas",
+      "category": "Identidade visual",
+      "description": "Logotipo para empresa de telas e redes de proteção e flyer digital com serviços e QR code para o WhatsApp.",
+      "highlights": [],
+      "services": [
+        "Logotipo",
+        "Flyer digital"
+      ],
+      "images": [
+        "imagens/portfolio/teotelas-flyer.webp",
+        "imagens/portfolio/teotelas-logo.webp"
+      ],
+      "published": true,
+      "sort_order": 6,
+      "id": "teotelas"
+    },
+    {
+      "slug": "vinix-clean",
+      "title": "Oferta antes e depois — Vinix Clean",
+      "client_name": "Vinix Clean",
+      "category": "Artes para redes sociais",
+      "description": "Arte promocional para higienização de sofá retrátil, com comparação antes e depois e chamada para agendamento pelo WhatsApp.",
+      "highlights": [],
+      "services": [
+        "Arte promocional"
+      ],
+      "images": [
+        "imagens/portfolio/vinix-oferta.webp"
+      ],
+      "published": true,
+      "sort_order": 7,
+      "id": "vinix-clean"
+    },
+    {
+      "slug": "luna-pink",
+      "title": "Logotipo — Luna Pink",
+      "client_name": "Luna Pink",
+      "category": "Identidade visual",
+      "description": "Logotipo para marca de moda fitness feminina.",
+      "highlights": [],
+      "services": [
+        "Logotipo"
+      ],
+      "images": [
+        "imagens/portfolio/luna-pink-logo.webp"
+      ],
+      "published": true,
+      "sort_order": 8,
+      "id": "luna-pink"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Como funciona a contratação pelo site?",
+      "answer": "Você escolhe os serviços, preenche seus dados e envia o pedido pelo WhatsApp ou por e-mail. Depois conferimos com você o escopo, o prazo e as condições antes de qualquer confirmação.",
+      "sort_order": 1,
+      "active": true,
+      "id": "faq-1"
+    },
+    {
+      "question": "Preciso pagar alguma coisa pelo site?",
+      "answer": "Não. O site não faz cobranças. O pagamento é combinado diretamente com a GR Visual depois que o orçamento for confirmado.",
+      "sort_order": 2,
+      "active": true,
+      "id": "faq-2"
+    },
+    {
+      "question": "A verba dos anúncios está inclusa nos pacotes de tráfego pago?",
+      "answer": "Não. O valor do pacote é pela gestão. A verba investida nos anúncios é paga à parte, diretamente na plataforma (Meta, Google etc.).",
+      "sort_order": 3,
+      "active": true,
+      "id": "faq-3"
+    },
+    {
+      "question": "Posso pedir um serviço que não está na lista?",
+      "answer": "Pode, sim. Use a opção \"Solicitar orçamento\" e descreva o que você precisa.",
+      "sort_order": 4,
+      "active": true,
+      "id": "faq-4"
+    },
+    {
+      "question": "Vocês vão até o meu negócio para produzir conteúdo?",
+      "answer": "Sim, a produção de conteúdo pode ser feita no local. O deslocamento é combinado e pago à parte pelo cliente.",
+      "sort_order": 5,
+      "active": true,
+      "id": "faq-5"
+    }
+  ]
+}

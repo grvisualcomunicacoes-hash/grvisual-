@@ -1,0 +1,8 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>GR Visual</title>
+<script>
+  // Endereços antigos ou digitados sem "#" voltam para o site
+  var base = location.pathname.split('/').slice(0, 2).join('/') + '/';
+  if (location.hostname.indexOf('github.io') === -1) base = '/';
+  var rest = location.pathname.slice(base.length).replace(/\/$/, '');
+  location.replace(base + (rest && rest !== 'admin' ? '#/' + rest : rest === 'admin' ? 'admin.html' : ''));
+</script></head><body></body></html>

@@ -1,0 +1,12 @@
+{
+  "name": "gr-visual-site-estatico",
+  "private": true,
+  "scripts": {
+    "build": "./build.sh ..",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
