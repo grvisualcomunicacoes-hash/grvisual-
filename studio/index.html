@@ -769,7 +769,7 @@ function vLogin(){
   return `<div class="card" style="max-width:420px;margin:24px auto">
   <h2 class="pg">Entrar</h2><p class="sub">Acesso administrativo da GR Visual Comunicações</p>
   <form class="fg" id="loginF">
-    <label for="lgEmail">E-mail<input class="f" id="lgEmail" type="email" autocomplete="username" required></label>
+    <label for="lgEmail">E-mail<input class="f" id="lgEmail" type="email" autocomplete="username" value="grvisualcomunicacoes@gmail.com" required></label>
     <label for="lgSenha">Senha<input class="f" id="lgSenha" type="password" autocomplete="current-password" minlength="6" required></label>
     <div id="lgMsg" class="sub" style="margin:0"></div>
     <button class="btn pri" type="submit">Entrar</button>
@@ -821,8 +821,8 @@ function bindConfig(){
   on("lgCriar","onclick",async()=>{ const m=$("#lgMsg"), email=$("#lgEmail").value.trim(), senha=$("#lgSenha").value;
     if(!email||senha.length<6){ m.textContent="Preencha o e-mail e uma senha de pelo menos 6 caracteres."; return; }
     const {data,error}=await sb.auth.signUp({email,password:senha});
-    if(error) m.innerHTML=`<span style="color:var(--bad)">${esc(error.message)}</span>`;
-    else if(!data.session) m.textContent="Conta criada. Abra o e-mail de confirmação e depois entre aqui."; });
+    if(error) m.innerHTML=`<span style="color:var(--bad)">${/database error|não permitido/i.test(error.message)?"Este e-mail não tem permissão para criar conta.":/already|registered/i.test(error.message)?"Essa conta já existe: digite a senha e toque em Entrar.":esc(error.message)}</span>`;
+    else if(!data.session) m.textContent="Conta criada. Abra o e-mail de confirmação que o Supabase enviou, toque no link e depois entre aqui com a mesma senha."; });
   on("cfgF","onsubmit",async e=>{ e.preventDefault(); const url=$("#cfgUrl").value.trim().replace(/\/+$/,""), key=$("#cfgKey").value.trim();
     if(!/^https:\/\/.+/.test(url)||key.length<20){ $("#cfgMsg").textContent="Confira a URL (começa com https://) e a chave."; return; }
     if(/service_role|sb_secret_/.test(key)||(()=>{try{return JSON.parse(atob(key.split(".")[1])).role==="service_role"}catch(_){return false}})()){ $("#cfgMsg").innerHTML=`<span style="color:var(--bad)">Essa é a chave secreta. Use a chave pública (anon/publishable).</span>`; return; }

@@ -16,16 +16,11 @@ Aplicativo de gestão da GR Visual Comunicações (PWA instalável).
 Nenhuma chave fica no código. A URL e a chave **pública** do Supabase são digitadas na tela
 Configurações e ficam salvas só no aparelho. A chave secreta (service_role) nunca deve ser usada no app.
 
-## Configurar o banco (uma vez, ~10 minutos)
+## Banco de dados
 
-1. Crie uma conta grátis em https://supabase.com e um projeto novo (região: São Paulo).
-2. No projeto, abra **SQL Editor**, cole o conteúdo de `supabase.sql` e clique em **Run**.
-3. Abra **Project Settings › API** e copie a **Project URL** e a chave **anon / publishable**.
-4. No app, vá em **Mais › Configurações**, cole os dois campos e toque em **Salvar e conectar**.
-5. Na tela de login, toque em **Primeiro acesso: criar minha conta** e confirme pelo e-mail.
-6. Depois de entrar, no Supabase vá em **Authentication › Sign In / Providers** e desligue
-   **Allow new users to sign up**, para ninguém mais criar conta.
-7. Em **Mais › Importar backup**, escolha o arquivo `gr-visual-backup-inicial.json` para trazer os clientes.
+Já configurado: projeto Supabase **grvisual** (`config.js`). Tabela `registros` com RLS (cada conta só acessa
+os próprios dados). Só `grvisualcomunicacoes@gmail.com` pode criar conta (tabela `acesso_permitido`).
+No primeiro cadastro, os clientes, pacotes, tarefas, cobranças e contratos migrados são copiados para a conta.
 
 ## Atualizar o app
 
