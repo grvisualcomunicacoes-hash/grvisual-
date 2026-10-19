@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#04060f">
+<title>Briefing do Mandato</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#04060f;--card:#0b1022;--card2:#111833;--line:#1f2a4d;--text:#eef2ff;--muted:#9aa6c8;
+  --cyan:#22d3ee;--purple:#a855f7;--magenta:#ec4899;--ok:#34d399;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.5}
+body{padding:0 16px 120px}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:28px 0 12px}
+.brand{font-family:Sora,sans-serif;font-weight:800;letter-spacing:.12em;font-size:.8rem;color:var(--cyan)}
+h1{font-family:Sora,sans-serif;font-size:1.7rem;line-height:1.2;margin:8px 0 6px}
+.sub{color:var(--muted);margin:0 0 14px}
+.bar{height:3px;width:72px;border-radius:3px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--magenta))}
+.tip{background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:12px;padding:12px 14px;margin:18px 0;color:var(--muted);font-size:.92rem}
+.tip b{color:var(--text)}
+.progress{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0}
+.progress .track{height:6px;background:var(--card2);border-radius:6px;overflow:hidden}
+.progress .fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--magenta));transition:width .3s}
+.progress small{color:var(--muted);font-size:.78rem}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:12px 0;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:16px;display:flex;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+.num{flex:0 0 32px;height:32px;border-radius:10px;display:grid;place-items:center;font-family:Sora;font-weight:700;font-size:.85rem;background:var(--card2);color:var(--cyan);border:1px solid var(--line)}
+.stitle{flex:1;font-weight:700}
+.stitle span{display:block;font-weight:500;color:var(--muted);font-size:.82rem}
+.count{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.count.done{color:var(--ok)}
+.body{padding:0 16px 16px}
+.q{padding:14px 0;border-top:1px solid var(--line)}
+.q label.t{display:block;font-weight:600;margin-bottom:4px}
+.q .h{display:block;color:var(--muted);font-size:.82rem;margin-bottom:8px}
+input[type=text],input[type=number],textarea,select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;font-size:16px}
+textarea{min-height:76px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--cyan);border-color:transparent}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{display:flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:.9rem;cursor:pointer}
+.opts input{accent-color:var(--purple)}
+.opts label:has(input:checked){border-color:var(--purple);background:rgba(168,85,247,.14)}
+.pkg{background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(236,72,153,.08));}
+.actions{position:fixed;left:0;right:0;bottom:0;background:rgba(4,6,15,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.actions .in{max-width:760px;margin:0 auto;display:flex;gap:8px}
+button{font:inherit;font-weight:700;border:0;border-radius:12px;padding:12px 14px;cursor:pointer}
+.b1{flex:1;background:linear-gradient(90deg,var(--cyan),var(--purple));color:#04060f}
+.b2{background:var(--card2);color:var(--text);border:1px solid var(--line)}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--card2);border:1px solid var(--line);padding:10px 16px;border-radius:12px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:9;max-width:90vw;text-align:center}
+.toast.on{opacity:1}
+.saved{color:var(--muted);font-size:.78rem;text-align:right;margin-top:4px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">GR VISUAL COMUNICAÇÕES</div>
+    <h1>Briefing do Mandato<br>Vereadora Patrícia Crizanto</h1>
+    <p class="sub">Roteiro de perguntas para a reunião no gabinete · Câmara de Vila Velha</p>
+    <div class="bar"></div>
+  </header>
+
+  <div class="tip"><b>Como usar:</b> faça a apresentação do portfólio primeiro e depois abra este roteiro. Anote as respostas aqui mesmo: tudo fica salvo neste celular automaticamente. No fim, toque em <b>Enviar</b> para receber tudo no e-mail da GR Visual, ou em <b>Copiar</b> para colar no WhatsApp. As perguntas com ★ são as mais importantes se o tempo for curto.</div>
+
+  <div class="progress"><div class="track"><div class="fill" id="fill"></div></div><small id="ptxt">0 respostas</small></div>
+
+  <form id="f" autocomplete="off"></form>
+  <div class="saved" id="saved"></div>
+  <footer>GR Visual Comunicações · (27) 98843-5960</footer>
+</div>
+
+<div class="actions"><div class="in">
+  <button type="button" class="b2" id="copy">Copiar</button>
+  <button type="button" class="b2" id="clear" title="Apagar respostas">Limpar</button>
+  <button type="button" class="b1" id="send">Enviar respostas</button>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// t: texto, h: dica, k: tipo (text|area|chips|multi|num|select), o: opções, s: estrela
+const S=[
+ {n:"Momento do mandato",d:"Abra a conversa entendendo o objetivo",q:[
+  {t:"★ Qual o principal objetivo da senhora com as redes nos próximos meses?",k:"multi",o:["Prestar contas do mandato","Ficar mais próxima dos bairros","Fortalecer o nome para os próximos passos","Divulgar projetos e leis","Ampliar alcance fora da base","Organizar o que já existe"]},
+  {t:"Depois das eleições, o que muda na comunicação daqui pra frente?",h:"Ouça sem comentar o resultado. Anote como ela quer se posicionar agora.",k:"area"},
+  {t:"Como a senhora quer ser vista por quem ainda não te conhece?",h:"3 palavras que definem a imagem dela (ex.: firme, acessível, presente).",k:"text"},
+  {t:"Qual público a senhora mais quer alcançar?",k:"multi",o:["Mulheres","Mulheres negras","Mães","Juventude","Moradores dos bairros","Lideranças comunitárias","Igrejas","Comerciantes","Toda a cidade"]}
+ ]},
+ {n:"Cargos e funções atuais",d:"Pautas saem de onde ela atua hoje",q:[
+  {t:"★ Além de vereadora, quais cargos e funções a senhora ocupa hoje?",h:"Confirme com ela: na Câmara, no partido (União Brasil) e em movimentos.",k:"multi",o:["Mesa Diretora","Presidente de comissão","Membro de comissão","Procuradoria da Mulher","Frente parlamentar","Liderança de bancada","Cargo no partido","Movimento social / coletivo","Conselho municipal"]},
+  {t:"Quais são esses cargos exatamente? (nome e função)",h:"Ex.: Comissão de ___ (presidente), Secretaria de ___ do partido.",k:"area"},
+  {t:"Ela ainda tem função em secretaria de mulheres / igualdade racial dentro ou fora do partido?",h:"Antes era secretária nacional de Mulheres Negras (época do PSB). Confirme se segue em algo parecido.",k:"text"},
+  {t:"Quais projetos de lei, indicações ou conquistas a senhora mais quer mostrar?",k:"area"},
+  {t:"Há datas fixas no ano que sempre têm ação do mandato?",h:"Ex.: Março das Mulheres, Novembro Negro, sessões solenes, aniversário da cidade.",k:"area"}
+ ]},
+ {n:"Pautas e bandeiras",d:"O que entra no cronograma toda semana",q:[
+  {t:"★ Quais são as 3 principais bandeiras do mandato hoje?",k:"multi",o:["Direitos das mulheres","Mulheres negras / igualdade racial","Bairros e infraestrutura","Saúde","Educação","Assistência social","Segurança","Juventude","Cultura","Fé e família","Pessoas com deficiência"]},
+  {t:"Quais bairros ou regiões são prioridade?",h:"Ela tem raízes em São Torquato. Pergunte quais outros bairros acompanha de perto.",k:"area"},
+  {t:"Tem algum tema que a senhora prefere que NÃO apareça nas redes?",k:"area"},
+  {t:"Algum assunto pede cuidado redobrado no tom?",h:"Deixe ela falar. Não sugira temas pessoais.",k:"area"}
+ ]},
+ {n:"Agenda da semana",d:"Base para gravações e stories",q:[
+  {t:"★ Quais dias e horários são fixos na agenda? (sessões, gabinete, visitas)",h:"Monte a semana tipo dela.",k:"area"},
+  {t:"Dias de sessão na Câmara",k:"multi",o:["Seg","Ter","Qua","Qui","Sex"]},
+  {t:"Tem gabinete aberto ao público? Qual dia e horário?",k:"text"},
+  {t:"Com que frequência faz visitas aos bairros e eventos?",k:"chips",o:["Todo dia","3–4x por semana","1–2x por semana","Varia muito"]},
+  {t:"Com quanta antecedência a agenda da semana fica pronta?",k:"chips",o:["Na sexta anterior","No fim de semana","Na segunda","Muda no dia"]},
+  {t:"Quem da equipe vai me passar a agenda? (nome e WhatsApp)",k:"text"},
+  {t:"Trabalha aos fins de semana com agenda pública?",k:"chips",o:["Sim, sempre","Às vezes","Não"]}
+ ]},
+ {n:"Redes sociais hoje",d:"Manter o padrão, sem diminuir",q:[
+  {t:"Quais perfis a senhora tem? (@ de cada um)",h:"Instagram, Facebook, TikTok, YouTube, WhatsApp/canal.",k:"area"},
+  {t:"Quem cuida das redes hoje e como funciona?",k:"area"},
+  {t:"Com que frequência posta hoje?",k:"chips",o:["Todo dia","5x por semana","3x por semana","Irregular"]},
+  {t:"★ Quantos Reels por semana a senhora costuma postar?",h:"Ela usa muito Reels. A ideia é manter o padrão.",k:"chips",o:["1–2","3–4","5 ou mais"]},
+  {t:"Quais formatos mais dão resultado pra senhora?",k:"multi",o:["Reels falando","Reels de ação nos bairros","Cortes de discurso","Carrossel","Arte de agenda","Fotos","Stories"]},
+  {t:"Tem algum perfil (político ou não) que a senhora admira a comunicação?",k:"text"},
+  {t:"O que a senhora NÃO gosta de ver nas suas redes?",k:"area"}
+ ]},
+ {n:"Gravações de conteúdo",d:"3 vezes por semana, ajustável",q:[
+  {t:"★ Quais dias e horários ficam melhores para gravar?",h:"Combinar sempre com horário definido antes. Sugestão: 3 encontros por semana.",k:"area"},
+  {t:"Quantas gravações por semana fazem sentido?",k:"chips",o:["2","3","4","Conforme a agenda"]},
+  {t:"Onde normalmente gravamos?",k:"multi",o:["Gabinete","Plenário","Bairros / visitas","Eventos","Casa / estúdio"]},
+  {t:"A senhora se sente à vontade falando para a câmera?",k:"chips",o:["Sim, bastante","Com roteiro","Prefere ser filmada em ação"]},
+  {t:"Prefere receber roteiro antes ou falar livre?",k:"chips",o:["Roteiro antes","Tópicos","Livre"]},
+  {t:"Alguém da equipe acompanha as gravações?",k:"text"},
+  {t:"Ponto de partida para a locomoção (de onde saio até ela)",h:"A locomoção vai inclusa no valor do plano.",k:"text"}
+ ]},
+ {n:"Stories do dia a dia",d:"3 a 5 por dia conforme a agenda",q:[
+  {t:"★ A senhora ou a equipe consegue me mandar fotos e vídeos do dia?",k:"chips",o:["Sim, todo dia","Às vezes","Não, preciso captar"]},
+  {t:"Quem envia esse material e até que horas?",k:"text"},
+  {t:"Stories em quais dias?",k:"chips",o:["Seg a sex","Seg a sáb","Todos os dias"]},
+  {t:"A senhora mesma posta stories pessoais também?",k:"chips",o:["Sim","Às vezes","Não"]}
+ ]},
+ {n:"Aprovação e rotina",d:"Revisão semanal do cronograma",q:[
+  {t:"★ Quem aprova os conteúdos antes de publicar?",k:"text"},
+  {t:"Em quanto tempo consegue aprovar?",k:"chips",o:["No mesmo dia","Até 24h","Até 48h"]},
+  {t:"Melhor dia e horário para a revisão semanal do cronograma",h:"Ajustar pautas conforme agenda e cargos.",k:"text"},
+  {t:"Prefere a revisão como?",k:"chips",o:["Presencial","Ligação","Áudio / WhatsApp","Documento para aprovar"]},
+  {t:"Criamos um grupo de WhatsApp com a equipe?",k:"chips",o:["Sim","Não, falar só com ela"]}
+ ]},
+ {n:"Acessos e identidade",d:"Para publicar e manter o padrão visual",q:[
+  {t:"★ Eu publico direto no perfil ou a equipe publica?",k:"chips",o:["GR Visual publica","Equipe publica","Misto"]},
+  {t:"Como fica o acesso? (senha, Meta Business, aprovação de login)",h:"Não anote senha aqui. Combine o envio por outro meio.",k:"text"},
+  {t:"Tem cores, logo, slogan ou padrão visual definidos?",k:"area"},
+  {t:"Tem banco de fotos profissionais recentes?",k:"chips",o:["Sim","Poucas","Não"]},
+  {t:"Usa a marca do novo partido nas peças?",k:"chips",o:["Sim","Não","Às vezes"]}
+ ]},
+ {n:"Cuidados e limites",d:"Evitar problema antes que aconteça",q:[
+  {t:"Responder comentários e mensagens fica com quem?",k:"chips",o:["Equipe dela","GR Visual (adicional)","Ela mesma"]},
+  {t:"Em caso de comentário negativo ou crise, quem eu aviso?",k:"text"},
+  {t:"Há alguma regra da Câmara sobre uso de imagem do plenário ou símbolos?",k:"text"},
+  {t:"Outros profissionais envolvidos? (fotógrafo, assessoria, tráfego pago)",k:"area"}
+ ]},
+ {n:"Pacote a confirmar",d:"Preencha com o que ela aprovar",pkg:1,q:[
+  {t:"Publicações por semana",k:"num",v:"5"},
+  {t:"Stories por dia",k:"chips",o:["3","3 a 5","5"]},
+  {t:"Gravações por semana (horário sempre combinado antes)",k:"num",v:"3"},
+  {t:"Reels por semana (gravados nos dias de produção)",k:"chips",o:["3","3 a 4","4"]},
+  {t:"Revisão semanal do cronograma",k:"chips",o:["Inclusa"]},
+  {t:"Locomoção",k:"chips",o:["Inclusa no valor","Por conta dela à parte"]},
+  {t:"Adicionais que ela pediu",h:"Cobertura de evento extra, impressos, tráfego pago, resposta de DMs…",k:"area"},
+  {t:"Valor combinado (R$/mês)",k:"text"},
+  {t:"Início previsto",k:"text"},
+  {t:"Pagamento",k:"multi",o:["PIX","Mensal adiantado","Em 2 parcelas","Precisa de nota fiscal","Pessoa física","Pelo gabinete"]},
+  {t:"Dia do vencimento",k:"text"},
+  {t:"Próximo passo combinado",h:"Ex.: envio a proposta final até amanhã.",k:"area"}
+ ]}
+];
+
+const KEY="gr-briefing-patricia-v1";
+const f=document.getElementById("f");
+let id=0;
+S.forEach((sec,i)=>{
+  const d=document.createElement("details");
+  if(i===0) d.open=true;
+  if(sec.pkg) d.classList.add("pkg");
+  d.innerHTML=`<summary><div class="num">${String(i+1).padStart(2,"0")}</div><div class="stitle">${sec.n}<span>${sec.d}</span></div><div class="count" data-c="${i}"></div></summary><div class="body"></div>`;
+  const b=d.querySelector(".body");
+  sec.q.forEach(q=>{
+    const name="q"+(id++); q.name=name; q.sec=i;
+    const w=document.createElement("div"); w.className="q";
+    let html=`<label class="t" for="${name}">${q.t}</label>${q.h?`<span class="h">${q.h}</span>`:""}`;
+    if(q.k==="text") html+=`<input type="text" id="${name}" name="${name}">`;
+    else if(q.k==="area") html+=`<textarea id="${name}" name="${name}"></textarea>`;
+    else if(q.k==="num") html+=`<input type="number" inputmode="numeric" id="${name}" name="${name}" placeholder="${q.v||""}">`;
+    else {
+      const type=q.k==="multi"?"checkbox":"radio";
+      html+=`<div class="opts">${q.o.map(o=>`<label><input type="${type}" name="${name}" value="${o}">${o}</label>`).join("")}<label><input type="${type}" name="${name}" value="Outro">Outro</label></div><input type="text" name="${name}_obs" placeholder="Observação (opcional)" style="margin-top:8px">`;
+    }
+    w.innerHTML=html; b.appendChild(w);
+  });
+  f.appendChild(d);
+});
+const QS=S.flatMap(s=>s.q);
+
+function val(q){
+  if(["text","area","num"].includes(q.k)){const v=f.elements[q.name].value.trim();return v;}
+  const sel=[...f.querySelectorAll(`input[name="${q.name}"]:checked`)].map(x=>x.value);
+  const obs=f.elements[q.name+"_obs"].value.trim();
+  return [sel.join(", "),obs].filter(Boolean).join(" — ");
+}
+function collect(){const o={};[...f.elements].forEach(e=>{if(!e.name)return;if(e.type==="checkbox"||e.type==="radio"){o[e.name]=o[e.name]||[];if(e.checked)o[e.name].push(e.value);}else o[e.name]=e.value;});return o;}
+function restore(o){[...f.elements].forEach(e=>{if(!(e.name in o))return;if(e.type==="checkbox"||e.type==="radio")e.checked=(o[e.name]||[]).includes(e.value);else e.value=o[e.name];});}
+function update(){
+  let total=0;
+  S.forEach((s,i)=>{const n=s.q.filter(q=>val(q)).length;total+=n;const c=f.querySelector(`[data-c="${i}"]`);c.textContent=`${n}/${s.q.length}`;c.classList.toggle("done",n===s.q.length);});
+  document.getElementById("fill").style.width=(total/QS.length*100)+"%";
+  document.getElementById("ptxt").textContent=`${total} de ${QS.length} respostas`;
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(collect()));document.getElementById("saved").textContent="Salvo neste aparelho às "+new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});}catch(e){}}
+try{const raw=localStorage.getItem(KEY);if(raw)restore(JSON.parse(raw));}catch(e){}
+f.addEventListener("input",()=>{update();save();});
+f.addEventListener("change",()=>{update();save();});
+update();
+
+function text(){
+  let out="BRIEFING – VEREADORA PATRÍCIA CRIZANTO\n"+new Date().toLocaleDateString("pt-BR")+"\n";
+  S.forEach((s,i)=>{const lines=s.q.map(q=>[q,val(q)]).filter(x=>x[1]);if(!lines.length)return;out+=`\n${i+1}. ${s.n.toUpperCase()}\n`;lines.forEach(([q,v])=>out+=`• ${q.t.replace("★ ","")}\n  ${v}\n`);});
+  return out;
+}
+const toast=m=>{const t=document.getElementById("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),2600);};
+document.getElementById("copy").onclick=async()=>{const t=text();try{await navigator.clipboard.writeText(t);toast("Respostas copiadas");}catch(e){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");toast("Respostas copiadas");}catch(_){toast("Não deu para copiar");}a.remove();}};
+document.getElementById("clear").onclick=()=>{if(!confirm("Apagar todas as respostas deste aparelho?"))return;f.reset();try{localStorage.removeItem(KEY);}catch(e){}update();toast("Respostas apagadas");};
+document.getElementById("send").onclick=async()=>{
+  const t=text();
+  if(!QS.some(q=>val(q))){toast("Preencha pelo menos uma resposta");return;}
+  const btn=document.getElementById("send");btn.disabled=true;btn.textContent="Enviando…";
+  try{
+    const r=await fetch("https://formsubmit.co/ajax/grvisualcomunicacoes@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:"Briefing – Vereadora Patrícia Crizanto",_template:"box",_captcha:"false",Briefing:t})});
+    const j=await r.json().catch(()=>({}));
+    if(r.ok&&String(j.success)!=="false")toast("Enviado para o e-mail da GR Visual ✓");
+    else throw new Error(j.message||"erro");
+  }catch(e){toast("Não foi possível enviar agora. Use Copiar e mande no WhatsApp.");}
+  btn.disabled=false;btn.textContent="Enviar respostas";
+};
+</script>
+</body>
+</html>
