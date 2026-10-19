@@ -7,6 +7,7 @@ export const SERVICE_CATEGORIES = [
   { key: 'divulgacao', label: 'Divulgação' },
   { key: 'identidade-visual', label: 'Identidade visual e artes' },
   { key: 'impressos', label: 'Impressos e campanhas' },
+  { key: 'tecnologia', label: 'Sites, automações e tecnologia' },
   { key: 'kits', label: 'Kits para empreendedores' },
   { key: 'avulsos', label: 'Artes e serviços avulsos' },
   { key: 'outros', label: 'Outros serviços' },
