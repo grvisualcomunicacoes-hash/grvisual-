@@ -1,11 +1,14 @@
 /** Categorias de serviços. A chave é gravada no banco; o rótulo aparece no site. */
 export const SERVICE_CATEGORIES = [
+  { key: 'alimentacao', label: 'Lanchonetes, restaurantes e confeitarias' },
   { key: 'redes-sociais', label: 'Gestão de redes sociais' },
   { key: 'conteudo', label: 'Produção de conteúdo' },
   { key: 'trafego-pago', label: 'Tráfego pago' },
   { key: 'divulgacao', label: 'Divulgação' },
   { key: 'identidade-visual', label: 'Identidade visual e artes' },
   { key: 'impressos', label: 'Impressos e campanhas' },
+  { key: 'kits', label: 'Kits para empreendedores' },
+  { key: 'avulsos', label: 'Artes e serviços avulsos' },
   { key: 'outros', label: 'Outros serviços' },
 ] as const;
 
@@ -19,7 +22,7 @@ export const THEME_PAGES = {
     title: 'Gestão de redes sociais',
     intro:
       'Planejamento, criação e organização do seu perfil para que ele funcione como vitrine e canal de contato com novos clientes.',
-    categories: ['redes-sociais', 'conteudo'],
+    categories: ['redes-sociais', 'conteudo', 'alimentacao'],
     portfolioCategories: ['Social media', 'Cases', 'Artes para redes sociais', 'Campanhas para redes sociais'],
   },
   'trafego-pago': {
@@ -33,7 +36,7 @@ export const THEME_PAGES = {
     title: 'Identidade visual e criação de artes',
     intro:
       'Logotipos, artes, cardápios, flyers e materiais impressos com a cara do seu negócio — do digital ao impresso.',
-    categories: ['identidade-visual', 'impressos'],
+    categories: ['identidade-visual', 'impressos', 'kits', 'avulsos'],
     portfolioCategories: ['Identidade visual', 'Cardápios e impressos', 'Artes para redes sociais'],
   },
 } as const;
