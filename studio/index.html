@@ -246,10 +246,20 @@ const F = {
     {k:"disponivel",l:"Disponível",t:"sel",o:["Sim","Não"]}
   ]
 };
-const NOMES = {clientes:"cliente",conteudos:"conteúdo",financeiro:"lançamento",tarefas:"tarefa",pacotes:"pacote"};
+F.documentos=[
+  {k:"clienteId",l:"Cliente",t:"cli",req:1},{k:"titulo",l:"Título do documento",req:1},
+  {k:"tipo",l:"Tipo",t:"sel",o:["Contrato","Proposta","Briefing","Autorização de imagem","Termo de aprovação","Relatório","Outro"]},
+  {k:"origem",l:"Origem (PDF original, transcrição, link)"},{k:"pdf",l:"PDF original / link do arquivo"},
+  {k:"inicio",l:"Início",t:"date"},{k:"fim",l:"Término",t:"date"},{k:"valor",l:"Valor total (R$)",t:"num"},
+  {k:"parcelas",l:"Parcelas e vencimentos",t:"area"},
+  {k:"assinatura",l:"Assinatura",t:"sel",o:["A confirmar","Assinado (comprovado)","Não assinado"]},
+  {k:"pagamento",l:"Pagamento",t:"sel",o:["A confirmar","Parcial","Quitado (comprovado)","Em aberto"]},
+  {k:"pendencias",l:"Pendências",t:"area"},{k:"texto",l:"Texto do documento",t:"area"}
+];
+const NOMES = {clientes:"cliente",conteudos:"conteúdo",financeiro:"lançamento",tarefas:"tarefa",pacotes:"pacote",documentos:"documento"};
 
 // ---------- estado ----------
-const S = {clientes:[],conteudos:[],financeiro:[],tarefas:[],pacotes:[],tia:[],criacoes:[]};
+const S = {clientes:[],conteudos:[],financeiro:[],tarefas:[],pacotes:[],documentos:[],tia:[],criacoes:[]};
 const loaded = new Set();
 let db = null, sample = null, downloads = null;
 let view = "inicio";
@@ -429,6 +439,8 @@ function abrirForm(col,item,preset){
       const mud = F.clientes.filter(f=>String(item[f.k]??"")!==String(dados[f.k]??"")).map(f=>f.l);
       if(mud.length){ dados.historico=[...(item.historico||[]),{d:agora(),t:"Alterado: "+mud.join(", ")}].slice(-80); }
     }
+    if(col==="documentos" && item){ const mud=F.documentos.filter(f=>String(item[f.k]??"")!==String(dados[f.k]??"")).map(f=>f.l); if(mud.length) dados.historico=[...(item.historico||[]),{d:agora(),t:"Alterado: "+mud.join(", ")}].slice(-50); }
+    if(col==="documentos" && !item){ dados.historico=[{d:agora(),t:"Documento registrado"}]; }
     if(col==="clientes" && !item){ dados.historico=[{d:agora(),t:"Cadastro criado"}]; }
     if(col==="tarefas" && !item){ dados.feito=false; }
     const b=e.submitter; if(b) b.disabled=true;
@@ -473,9 +485,10 @@ function alertas(){
   S.clientes.filter(c=>c.status==="Ativo"&&c.vencimento&&c.vencimento<t).forEach(c=>A.push({n:3,cl:"bad",t:"Contrato vencido e ainda ativo: "+c.nome,m:"Venceu "+dBR(c.vencimento)+" · renovar ou encerrar",go:["clientes",c]}));
   S.clientes.filter(c=>c.status==="A confirmar").forEach(c=>A.push({n:1,cl:"vi",t:"A confirmar: "+c.nome,m:(c.notas||"Revise o cadastro").split("\n")[0].slice(0,110),go:["clientes",c]}));
   S.clientes.filter(c=>c.status==="Ativo"&&(!c.valor||!c.vencimento)).forEach(c=>A.push({n:1,cl:"vi",t:"Cadastro incompleto: "+c.nome,m:"Falta "+[!c.valor&&"valor",!c.vencimento&&"vencimento"].filter(Boolean).join(" e "),go:["clientes",c]}));
+  S.documentos.filter(d=>d.tipo==="Contrato"&&(!/comprovad/i.test(d.assinatura||"")||!/comprovad/i.test(d.pagamento||""))&&(!d.fim||d.fim>=t)).forEach(d=>A.push({n:1,cl:"vi",t:"Contrato pendente: "+(cliNome(d.clienteId)||d.titulo),m:"Assinatura: "+(d.assinatura||"a confirmar")+" · Pagamento: "+(d.pagamento||"a confirmar"),go:["documentos",d]}));
   return A.sort((a,b)=>b.n-a.n);
 }
-function abrirAlvo([col,item]){ if(col==="clientes") fichaCliente(item.id); else abrirForm(col,item); }
+function abrirAlvo([col,item]){ if(col==="clientes") fichaCliente(item.id); else if(col==="documentos") verDoc(item.id); else abrirForm(col,item); }
 
 // ---------- views ----------
 function render(){
@@ -580,16 +593,18 @@ function fichaCliente(id){
   const conts=S.conteudos.filter(x=>x.clienteId===id).sort((a,b)=>(b.data||"").localeCompare(a.data||"")).slice(0,6);
   const fin=S.financeiro.filter(l=>l.clienteId===id).sort((a,b)=>(a.vencimento||"").localeCompare(b.vencimento||""));
   const tar=S.tarefas.filter(x=>x.clienteId===id&&!x.feito);
+  const docs=S.documentos.filter(d=>d.clienteId===id).sort((a,b)=>(b.inicio||"").localeCompare(a.inicio||""));
   const recebido=fin.filter(l=>l.tipo!=="Despesa"&&!ehVerba(l)).reduce((s,l)=>s+pagoValor(l),0);
   const aberto=fin.filter(l=>l.tipo!=="Despesa"&&!ehVerba(l)).reduce((s,l)=>s+emAberto(l),0);
   const campos=F.clientes.filter(f=>!["nome","status","etapa"].includes(f.k)&&c[f.k]!==undefined&&c[f.k]!==null&&c[f.k]!=="");
   sheet(`<h3><span>${esc(c.nome)}</span><button class="btn sm" data-close>Fechar</button></h3>
   <div class="pills" style="margin:-6px 0 12px"><span class="pill ${STATUS_CL[c.status]||""}">${esc(c.status||"Sem situação")}</span>${c.etapa?`<span class="pill cy">${esc(c.etapa)}</span>`:""}${c.origem?`<span class="pill">Origem: ${esc(c.origem)}</span>`:""}</div>
-  <div class="toolbar"><button class="btn sm pri" id="edCli">Editar ficha</button><button class="btn sm" id="nTar">+ Tarefa</button><button class="btn sm" id="nCont">+ Conteúdo</button><button class="btn sm" id="nFin">+ Cobrança</button><button class="btn sm ai" id="tiaCli">Resumo da TIA</button></div>
+  <div class="toolbar"><button class="btn sm pri" id="edCli">Editar ficha</button><button class="btn sm" id="nTar">+ Tarefa</button><button class="btn sm" id="nCont">+ Conteúdo</button><button class="btn sm" id="nFin">+ Cobrança</button><button class="btn sm" id="nDoc">+ Documento</button><button class="btn sm ai" id="tiaCli">Resumo da TIA</button></div>
   <div class="kpis" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="kpi"><span>Recebido (total)</span><b>${brl(recebido)}</b></div><div class="kpi"><span>Em aberto</span><b>${brl(aberto)}</b></div></div>
   <div id="tiaCliOut"></div>
   <h3 class="sec">Ficha</h3>
   ${campos.length?`<dl class="dl">${campos.map(f=>`<dt>${esc(f.l)}</dt><dd>${f.t==="num"?brl(c[f.k]):f.t==="date"?dBR(c[f.k]):esc(c[f.k])}</dd>`).join("")}</dl>`:vazio("Ficha sem detalhes ainda.")}
+  <h3 class="sec">Contratos e documentos <span class="c">${docs.length}</span></h3>${docs.length?`<div class="list">${docs.map(linhaDoc).join("")}</div>`:`<p class="sub">Nenhum documento.</p>`}
   <h3 class="sec">Tarefas abertas <span class="c">${tar.length}</span></h3>${tar.length?`<div class="list">${tar.map(linhaTarefa).join("")}</div>`:`<p class="sub">Nenhuma.</p>`}
   <h3 class="sec">Financeiro <span class="c">${fin.length}</span></h3>${fin.length?`<div class="list">${fin.map(linhaFin).join("")}</div>`:`<p class="sub">Nenhum lançamento.</p>`}
   <h3 class="sec">Conteúdos recentes <span class="c">${conts.length}</span></h3>${conts.length?`<div class="list">${conts.map(linhaConteudo).join("")}</div>`:`<p class="sub">Nenhum conteúdo.</p>`}
@@ -599,6 +614,8 @@ function fichaCliente(id){
   $("#edCli").onclick=()=>abrirForm("clientes",c);
   $("#nTar").onclick=()=>abrirForm("tarefas",null,{clienteId:id,prioridade:"IMPORTANTE"});
   $("#nCont").onclick=()=>abrirForm("conteudos",null,{clienteId:id,prod:"Ideia",aprov:"Não enviado",pub:"Não agendado"});
+  $("#nDoc").onclick=()=>abrirForm("documentos",null,{clienteId:id,tipo:"Contrato",assinatura:"A confirmar",pagamento:"A confirmar"});
+  document.querySelectorAll("#sheetRoot [data-doc]").forEach(el=>el.onclick=()=>verDoc(el.dataset.doc));
   $("#nFin").onclick=()=>abrirForm("financeiro",null,{clienteId:id,tipo:"Receita",situacao:"Pendente",categoria:"Gestão de redes"});
   $("#histAdd").onclick=async()=>{const t=$("#histTx").value.trim(); if(!t) return; const h=[...(c.historico||[]),{d:agora(),t}].slice(-80); if(await salvar("clientes",id,{historico:h})){ c.historico=h; fichaCliente(id); toast("Registrado"); }};
   $("#tiaCli").onclick=()=>resumoCliente(c);
@@ -619,10 +636,28 @@ function contextoCliente(c){
   return {cliente:rest,historico:(historico||[]).slice(-15),
     financeiro:S.financeiro.filter(l=>l.clienteId===c.id).map(l=>({tipo:l.tipo,descricao:l.descricao,categoria:l.categoria,valor:l.valor,vencimento:l.vencimento,situacao:l.situacao,valorPago:l.valorPago,dataPagamento:l.dataPagamento})),
     tarefas:S.tarefas.filter(t=>t.clienteId===c.id).map(t=>({titulo:t.titulo,prioridade:t.prioridade,prazo:t.prazo,feito:!!t.feito})),
+    documentos:S.documentos.filter(d=>d.clienteId===c.id).map(d=>({titulo:d.titulo,inicio:d.inicio,fim:d.fim,valor:d.valor,parcelas:d.parcelas,assinatura:d.assinatura,pagamento:d.pagamento,pendencias:d.pendencias,origem:d.origem})),
     conteudos:S.conteudos.filter(x=>x.clienteId===c.id).slice(-15).map(x=>({tema:x.tema,data:x.data,plataforma:x.plataforma,formato:x.formato,prod:x.prod,aprov:x.aprov,pub:x.pub}))};
 }
 function erroIA(e){ return ({not_granted:"Você não autorizou a IA neste app. Reabra e permita para usar.",rate_limited:"Limite de uso atingido. Tente de novo daqui a pouco.",session_expired:"Sua sessão expirou. Entre de novo no Claude.",refused:"A IA não respondeu a esse pedido. Reformule.",sampling_disabled:"A IA não está disponível nesta conta."})[e.code]||"Não foi possível gerar agora. Tente de novo."; }
 
+function linhaDoc(d){
+  const ok=/comprovad/i.test(d.assinatura||""), pg=/comprovad/i.test(d.pagamento||"");
+  return `<button class="row" data-doc="${d.id}"><i class="stripe ${ok&&pg?"good":"warn"}"></i><div class="tx"><div class="t">${esc(d.titulo)}</div>
+  <div class="m">${esc([d.tipo,d.inicio&&d.fim?dBR(d.inicio)+" a "+dBR(d.fim):"",d.valor?brl(d.valor):""].filter(Boolean).join(" · "))}</div>
+  <div class="pills"><span class="pill ${ok?"good":"warn"}">Assinatura: ${esc(d.assinatura||"A confirmar")}</span><span class="pill ${pg?"good":"warn"}">Pagamento: ${esc(d.pagamento||"A confirmar")}</span>${/transcri/i.test(d.origem||"")?`<span class="pill vi">Transcrição</span>`:""}</div></div></button>`;
+}
+function verDoc(id){
+  const d=S.documentos.find(x=>x.id===id); if(!d) return;
+  const campos=[["Cliente",cliNome(d.clienteId)],["Tipo",d.tipo],["Origem",d.origem],["PDF original",d.pdf],["Vigência",d.inicio?dBR(d.inicio)+" a "+dBR(d.fim):""],["Valor total",d.valor?brl(d.valor):""],["Parcelas",d.parcelas],["Assinatura",d.assinatura],["Pagamento",d.pagamento],["Pendências",d.pendencias]].filter(x=>x[1]);
+  sheet(`<h3><span>${esc(d.titulo)}</span><button class="btn sm" data-close>Fechar</button></h3>
+  <div class="toolbar"><button class="btn sm pri" id="edDoc">Editar</button><button class="btn sm" id="voltaCli">Voltar à ficha</button></div>
+  <dl class="dl">${campos.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+  ${d.texto?`<h3 class="sec">Texto</h3><div class="card out" style="font-size:14px">${esc(d.texto)}</div>`:""}
+  <h3 class="sec">Histórico</h3><div class="hist">${[...(d.historico||[])].reverse().map(h=>`<div><time>${new Date(h.d).toLocaleDateString("pt-BR")}</time><div>${esc(h.t)}</div></div>`).join("")||`<span class="sub">Sem registros.</span>`}</div>`);
+  $("#edDoc").onclick=()=>abrirForm("documentos",d);
+  $("#voltaCli").onclick=()=>fichaCliente(d.clienteId);
+}
 function linhaFin(l){
   const t=hoje(), ab=emAberto(l), venc=ab>0&&l.vencimento&&l.vencimento<t;
   const cl=l.situacao==="Pago"?"good":venc?"bad":l.situacao==="Parcial"?"warn":l.situacao==="Cancelado"?"":"cy";
@@ -868,6 +903,7 @@ function contextoGeral(){
     financeiro:S.financeiro.map(l=>({cliente:cliNome(l.clienteId),tipo:l.tipo,descricao:l.descricao,categoria:l.categoria,valor:l.valor,vencimento:l.vencimento,situacao:l.situacao,valorPago:l.valorPago,dataPagamento:l.dataPagamento})),
     tarefas:S.tarefas.filter(x=>!x.feito).map(x=>({titulo:x.titulo,cliente:cliNome(x.clienteId),prioridade:x.prioridade,prazo:x.prazo})),
     conteudos:S.conteudos.filter(x=>!x.data||x.data>=addDias(t,-30)).slice(0,80).map(x=>({cliente:cliNome(x.clienteId),tema:x.tema,data:x.data,hora:x.hora,plataforma:x.plataforma,formato:x.formato,producao:x.prod,aprovacao:x.aprov,publicacao:x.pub})),
+    documentos:S.documentos.map(d=>({cliente:cliNome(d.clienteId),titulo:d.titulo,inicio:d.inicio,fim:d.fim,valor:d.valor,assinatura:d.assinatura,pagamento:d.pagamento,pendencias:d.pendencias})),
     pacotes:S.pacotes.map(p=>({nome:p.nome,preco:p.preco,duracao:p.duracao,entregaveis:p.entregaveis}))};
   let s=JSON.stringify(d); if(s.length>150000) s=s.slice(0,150000);
   return s;

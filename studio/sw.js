@@ -1,6 +1,6 @@
 // Service worker do GR Visual Studio IA: guarda a tela do app para abrir rápido e sem internet.
 // Dados do banco (Supabase) nunca são guardados aqui.
-const CACHE = "gr-studio-v3";
+const CACHE = "gr-studio-v4";
 const SHELL = ["./", "./index.html", "./config.js", "./manifest.webmanifest", "../icon-512.png", "../apple-touch-icon.png", "../favicon-32.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
