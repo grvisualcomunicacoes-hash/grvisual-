@@ -58,6 +58,7 @@ button{font:inherit;font-weight:700;border:0;border-radius:12px;padding:12px 14p
 .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--card2);border:1px solid var(--line);padding:10px 16px;border-radius:12px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:9;max-width:90vw;text-align:center}
 .toast.on{opacity:1}
 .saved{color:var(--muted);font-size:.78rem;text-align:right;margin-top:4px}
+.notes{border-style:dashed;margin-top:24px}
 footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
 </style>
 </head>
@@ -76,6 +77,28 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:28px}
 
   <form id="f" autocomplete="off"></form>
   <div class="saved" id="saved"></div>
+
+  <details class="notes">
+    <summary><div class="num">GR</div><div class="stitle">Notas internas<span>Toque para abrir · só para a Pamella</span></div></summary>
+    <div class="body">
+      <div class="q"><label class="t">Ordem da reunião</label>
+        <span class="h">1) Portfólio, 5 a 7 min · 2) Perguntas deste roteiro · 3) Proposta final enviada em até 24h.</span></div>
+      <div class="q"><label class="t">Valor do pacote completo</label>
+        <span class="h"><b style="color:var(--text)">Sugestão: R$ 2.400/mês</b> (cerca de R$ 1.800 de trabalho + R$ 600 de locomoção, ~13 saídas).<br>
+        <b style="color:var(--text)">Piso: R$ 1.990/mês</b>, com 2 gravações por semana em vez de 3.<br>
+        Proposta anterior: R$ 650 (escopo bem menor). Não fechar o novo pacote abaixo do piso.</span></div>
+      <div class="q"><label class="t">Frase pronta</label>
+        <span class="h">"Com tudo isso, a gestão fica entre R$ 1.990 e R$ 2.400, dependendo de quantas gravações por semana a gente fechar. Te mando a proposta certinha até amanhã."</span></div>
+      <div class="q"><label class="t">Cuidados na conversa</label>
+        <span class="h">• Partido atual: União Brasil (não falar PSB).<br>
+        • Eleição de outubro: falar só de forma positiva ("mais de 5 mil votos, base ampliada").<br>
+        • Não puxar assuntos pessoais ou de família; só se ela trouxer.<br>
+        • Modelos do portfólio (agenda, visita, posicionamento) são exemplos de formato, não fatos sobre ela.</span></div>
+      <div class="q"><label class="t">Minha rotina</label>
+        <span class="h">3 saídas por semana + stories todo dia, junto com as meninas e os outros clientes. Se pesar, o piso com 2 gravações protege meu tempo.</span></div>
+    </div>
+  </details>
+
   <footer>GR Visual Comunicações · (27) 98843-5960</footer>
 </div>
 
