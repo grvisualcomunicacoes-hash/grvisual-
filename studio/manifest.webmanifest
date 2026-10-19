@@ -1,0 +1,16 @@
+{
+  "name": "GR Visual Studio IA",
+  "short_name": "GR Studio",
+  "description": "Gestão da GR Visual Comunicações: clientes, conteúdos, financeiro e tarefas.",
+  "lang": "pt-BR",
+  "start_url": "./#inicio",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#060A15",
+  "theme_color": "#060A15",
+  "icons": [
+    { "src": "../icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "../apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
